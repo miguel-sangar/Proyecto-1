@@ -1,0 +1,136 @@
+/*---FUENTE DE TEXTO---*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/*---VARIABLES---*/
+:root{
+    --primary-color: white;
+    --secondary-color: black;
+    font-family: "Montserrat", sans-serif;
+}
+
+/*---RESET---*/
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+/*---HEADER Y MENÚ DE NAVEGACIÓN---*/
+
+header{
+    width: 100%;
+    height: auto;
+}
+
+/*Menú de navegación*/
+header > nav{
+    width: 100%;
+    height: 10%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow:hidden;
+    position: fixed;
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    flex: 1;    
+}
+
+/*Logo*/
+header > nav > img{
+    width: 20vw;
+    max-width: 250px;
+    min-width: 200px;
+    padding-left: 20px;    
+    /* background-color: blue; */
+    object-fit: cover;
+    flex-shrink: 1;
+}
+
+/*Menú*/
+header > nav > ul{
+    /* background-color: green; */
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    /* padding-right: 40px; */
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Alinear iconos con texto*/
+.items{
+    display: flex;
+    align-items: center;
+}
+
+/*Propiedades de los enlaces del menú*/
+.items > a{
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    margin: 5px
+}
+
+/*---MAIN Y SECCIONES---*/
+
+main{
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none;
+}
+
+/*Propiedades comunes a todas las secciones del MAIN*/
+main > section{
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    color: white;
+}
+
+/*---SECCIÓN 1 (HERO)---*/
+.seccion1 {
+    background-color: #1abc9c;
+    background-image: url(./assets/background/background.jpg);
+    /* filter: blur(1%); */
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/*---SECCIÓN 2---*/
+
+.seccion2 {
+    background-color: #3498db;
+}
+
+/*---SECCIÓN 3---*/
+
+.seccion3 {
+    background-color: #9b59b6;
+}
+
+/*---SECCIÓN 4---*/
+
+.seccion4 {
+    background-color: #e74c3c;
+}
