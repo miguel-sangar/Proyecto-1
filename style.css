@@ -3,8 +3,16 @@
 
 /*---VARIABLES---*/
 :root{
+    /*Colores*/
     --primary-color: white;
     --secondary-color: black;
+    --button_primary-color: #FF6A00;
+    --button_secondary-color: #B34700;
+    --gradient_primary-color: rgba(103, 0, 163, 1) 0%;
+    --gradient_secondary-color: rgba(224, 47, 117, 1) 20%;
+    --gradient_tertiary-color: rgba(255, 106, 0, 1) 100%;
+
+    /*Fuentes de texto*/
     font-family: "Montserrat", sans-serif;
 }
 
@@ -35,14 +43,14 @@ header{
 header > nav{
     width: 100%;
     height: 10%;
-    background-color: transparent;
+    background-color: var(--secondary-color);
     display: flex;
     flex-direction: row;
     /* justify-content: center; */
     align-items: center;
-    overflow:hidden;
+    overflow: hidden;
     position: fixed;
-    backdrop-filter: blur(5px);
+    /* backdrop-filter: blur(5px); */
     z-index: 1000;
     flex: 1;    
 }
@@ -54,8 +62,7 @@ header > nav > img{
     min-width: 200px;
     /* padding-left: 20px;   */
     margin-left: 100px;  
-    background-color: blue;
-
+    /* background-color: blue; */
     justify-content: left;
     object-fit: cover;
     flex-shrink: 1;
@@ -82,7 +89,7 @@ header > nav > ul{
 
 /*Propiedades de los enlaces del menú*/
 .items > a{
-    color: white;
+    color: var(--primary-color);
     text-decoration: none;
     font-size: 24px;
     margin: 5px;    
@@ -90,11 +97,10 @@ header > nav > ul{
 
 
 header > nav > a > img{
-    color: white;
+    color: var(--primary-color);
     font-size: 24;
     text-decoration: none;
-    display: none;
-    
+    display: none;    
 }
 
 /*---MAIN Y SECCIONES---*/
@@ -125,7 +131,7 @@ main > section{
     justify-content: center;
     align-items: center;
     font-size: 3em;
-    color: white;
+    color: var(--primary-color);
 }
 
 /*---SECCIÓN 1 (HERO)---*/
@@ -139,7 +145,8 @@ main > section{
     align-items: center;
     gap: 50px;
     margin: 100px;
-    color: white;
+    color: var(--primary-color);
+    /* background-color: red; */
 }
 
 /*Primer <div> que contiene h1,h2 y p*/
@@ -151,99 +158,143 @@ main > section{
     justify-content: center;
     gap: 20px;
     padding: 20px;
-    background-color: blue;
+    /* background-color: blue; */
 }
 
+/*Dar formato de texto al h1*/
 h1{
     font-size: clamp(40px, 6vw, 100px);
-    color: white;
-    background-color: aqua;
+    color: var(--primary-color);
 }
 
+/*Dar formato de texto al h2*/
 .seccion1 >  div:first-child > h2{
     font-size: clamp(40px, 4vw, 80px);
-    color: white;
-    background-color: #9b59b6;
+    font-family: "Montserrat", sans-serif;
+    background: linear-gradient(90deg, var(--gradient_primary-color), var(--gradient_secondary-color), var(--gradient_tertiary-color));
+    /*Aumentar el tamaño del background*/
+    background-size: 200%;
+    /*Eliminar color de fondo*/
+    -webkit-background-clip: text;
+    /*Hacer la letra del texto transparente para visualizar el degradado*/
+    -webkit-text-fill-color: transparent;
+    /*Si el navegador no es compatible con esta propiedad, el color por defecto será blanco*/
+    background-clip: text;
+    background-color: var(--primary-color);
+    animation: animar-degradado 3s ease-in-out infinite alternate;
 }
 
+/*Animar degradado del h2*/
+@keyframes animar-degradado {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/*Dar formato de texto al párrafo*/
 .seccion1 > div:first-child > p{
-    font-size: clamp(14px, 1.4vw, 40px);
-    color: white;
-    background-color: green;
+    font-size: clamp(20px, 1.4vw, 40px);
+    color: var(--primary-color);
 }
 
+/*Dar formato de texto al div que contiene el enlace de descarga del PDF*/
 .seccion1 > div:first-child > div:nth-child(4){
     width: clamp(180px, 2vw, 200px);
     height: 60px;
-    background-color: red;
-    border: 2px solid red;
+    min-height: 60px;
+    background-color: var(--button_primary-color);
+    border: 2px solid var(--button_secondary-color);
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/*Cambiar color al pasar el mouse por encima del enlace de descarga del PDF*/
+.seccion1 > div:first-child > div:nth-child(4):hover{
+    background-color: var(--button_secondary-color);
+    border-color: var(--button_primary-color);
+}
+
+/*Dar formato de texto al párrafo*/
 .seccion1 > div:first-child > div:nth-child(4) > a{
-    color: white;
-    font-size: clamp(1px, 1.4vw, 26px);
+    color: var(--primary-color);
+    font-size: clamp(20px, 1.4vw, 22px);
     text-decoration: none;
 }
 
+/*Separar ligeramente texto del icono "download_icon"*/
+.seccion1 > div:first-child > div:nth-child(4) > img{
+    margin-left: 5px;
+}
+
+/*Dar formato al div que contiene la imagen artística*/
 .seccion1 > div:nth-of-type(2){
     width: clamp(300px, 40vw, 500px);
     height: clamp(300px, 40vw, 500px);
+    border-radius: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
+/*Dar formato a la imagen artística*/
 .seccion1 > div:nth-of-type(2) > img{
     width: 100%;
     height: 100%;
-    object-fit:contain;
+    object-fit: contain;
     border-radius: 100%;
 }
 
+/*Dar formato al párrafo "↓↓ Scroll ↓↓"*/
 .seccion1 > p{
     position: absolute;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 24px;
-    color: white;
+    font-size: 30px;
+    color: var(--primary-color);
     text-align: center;
-    animation: rebote 2s infinite;
+    animation: rebote 2s ease-in-out infinite;
 }
 
 @keyframes rebote {
     0% {
-        transform: translate(-50%, 0);
+         transform: translate(-50%, 0);
     }
-    20% {
-        transform: translate(-50%, -15px);
+    25% {
+         transform: translate(-50%, -15px);
     }
-    40% {
-        transform: translate(-50%, 0);
+    50% {
+         transform: translate(-50%, 0);
     }
-    60% {
-        transform: translate(-50%, -15px);
-    }
-    80% {
-        transform: translate(-50%, 0);
+    75% {
+         transform: translate(-50%, -15px);
     }
     100% {
-        transform: translate(-50%, -15px);
+         transform: translate(-50%, 0);
     }
 }
 
-@media (max-width: 1120px){
+/*Si el ancho de pantalla es menor a 10243px y el alto de pantalla es menor a*/
+@media (max-width: 1023px) {
+
+    /*Ocultar menú de navegación*/
     header > nav > .menu{
         display: none;
     }
+    
+    /*Reducir margen izquierdo del logo*/
+    header > nav > img{
+        margin-left: 50px;
+    }
 
+    /*Situar icono menú hamburguesa a la derecha del header*/
     header > nav > a{
         margin-left: auto;
-        padding-right: 100px;
+        padding-right: 50px;
     }
 
     /*Mostrar icono menú hamburguesa*/
@@ -253,12 +304,53 @@ h1{
         height: auto;
     }
 
-    /*Recolocar elementos sección 1*/
+    /*Recolocar elementos de la sección 1*/
     .seccion1{
+        width: 100%;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: red;
+        gap: 0px;
+        margin: 0px;
+        padding: 0px;
+        /* background-color: red; */
+    }
+
+    .seccion1 > div:first-child{
+        width: 100%;
+        height: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* background-color: green; */
+    }
+
+    /*Ajustar tamaño h1*/
+    .seccion1 > div:nth-child(1) > h1{
+        font-size: clamp(48px, 6vw, 100px);
+    }
+
+    /*Ajustar tamaño h2*/
+    .seccion1 > div:nth-child(1) > h2 {
+        font-size: clamp(36px, 4vw, 80px);
+    }
+
+    /*Ajustar párrafo al centro*/
+    .seccion1 > div:nth-child(1) > p {
+        font-size: clamp(14px, 1.4vw, 40px);
+        max-width: 470px;
+    }
+
+    /*Cambiar tamaño del div que contiene al párrafo*/
+    .seccion1 > div:first-child > div:nth-child(4){
+        width: clamp(150px, 2vw, 170px);
+        height: 40px;
+        min-height: 40px; 
+    }
+
+    /*Cambiar tamaño de texto al párrafo*/
+        .seccion1 > div:first-child > div:nth-child(4) > a{
+        font-size: clamp(16px, 1.4vw, 22px);
     }
 
     /*Información*/
@@ -266,24 +358,180 @@ h1{
         order: 2;
         width: 100%;
         height: auto;
-    }
-
-    /*Foto artística*/
-    .seccion1 > div:nth-of-type(2) {
-        order: 1;
-        width: 500px;
-        height: 500px;
         display: flex;
         justify-content: center;
         align-items: center;
+        /* background-color: blue; */
+    }
+
+      /*Foto artística*/
+    .seccion1 > div:nth-child(2) {
+        order: 1;
+        width: clamp(250px,15vw,350px);
+        height: clamp(250px,15vw,350px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        /* background-color: yellow; */
     }
 }
 
 /*---SECCIÓN 2---*/
 
 .seccion2 {
-    background-color: #000000;
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
+
+.seccion2 > div{
+    position: relative;
+    width: 100%;
+    max-width: 990px;
+    height: auto;
+    max-height: 100%;
+    margin-top: 5%;
+    gap: 40px;
+    margin: 5% auto 0px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(200px, 1fr);
+    color: var(--primary-color);
+    /* background-color: blue; */
+}
+
+.seccion2 > h3{
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-style: "Montserrat", sans-serif;
+}
+
+.seccion2 > div > article:first-child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seccion2 > div > article:first-child > img{
+    width: 90%;
+    height: auto;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    border: white solid 2px;
+    filter: grayscale(100%);
+}
+
+.seccion2 > div > article:first-child > img:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    filter: grayscale(0%);
+    cursor: pointer;
+}
+
+.seccion2 > div > article:nth-child(2){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seccion2 > div > article:nth-child(2) > img{
+    width: 90%;
+    height: auto;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    border: white solid 2px;
+    filter: grayscale(100%);
+}
+
+.seccion2 > div > article:nth-child(2) > img:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    filter: grayscale(0%);
+}
+
+.seccion2 > div > article:nth-child(3){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seccion2 > div > article:nth-child(3) > img{
+    width: 90%;
+    height: auto;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    border: white solid 2px;
+    filter: grayscale(100%);
+}
+
+.seccion2 > div > article:nth-child(3) > img:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    filter: grayscale(0%);
+}
+
+.seccion2 > div > article:last-child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seccion2 > div > article:last-child > img{
+    width: 90%;
+    height: auto;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    border: white solid 2px;
+    filter: grayscale(100%);
+}
+
+.seccion2 > div > article:last-child > img:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    filter: grayscale(0%);
+}
+
+/*Dar formato al párrafo "↓↓ Scroll ↓↓"*/
+.seccion2 > p{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    color: var(--primary-color);
+    text-align: center;
+    animation: rebote 2s ease-in-out infinite;
+}
+
+@keyframes rebote {
+    0% {
+         transform: translate(-50%, 0);
+    }
+    25% {
+         transform: translate(-50%, -15px);
+    }
+    50% {
+         transform: translate(-50%, 0);
+    }
+    75% {
+         transform: translate(-50%, -15px);
+    }
+    100% {
+         transform: translate(-50%, 0);
+    }
+}
+
 
 /*---SECCIÓN 3---*/
 
