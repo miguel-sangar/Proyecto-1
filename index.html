@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <!--Precargar iconos para evitar parpadeo al hacer hover sobre los items del menú-->
+    <link rel="preload" href="./assets/icons/home_icon_color.png" as="image">
+    <link rel="preload" href="./assets/icons/code_icon_color.png" as="image">
+    <link rel="preload" href="./assets/icons/about_me_icon_color.png" as="image">
+    <link rel="preload" href="./assets/icons/contact_icon_color.png" as="image">
     <title>Portafolio Sangar</title>
 </head>
 <body>
@@ -12,19 +17,19 @@
             <img class="logo" src="./assets/images/Logo.png" alt="">
             <ul class="menu">
                 <li class="items">
-                    <img src="./assets/icons/home_icon.png" alt="">
+                    <img class="home_img" src="./assets/icons/home_icon.png" alt="">
                     <a href="#Inicio">Inicio</a>
                 </li>
                 <li class="items">
-                    <img src="./assets/icons/code_icon.png" alt="">
+                    <img class="portafolio_img" src="./assets/icons/code_icon.png" alt="">
                     <a href="#Portafolio">Portafolio</a>
                 </li>
                 <li class="items">
-                    <img src="./assets/icons/about_me_icon.png" alt="">
+                    <img class="about_me_img" src="./assets/icons/about_me_icon.png" alt="">
                     <a href="#SobreMi">Sobre mí</a>
                 </li>
                 <li class="items">
-                    <img src="./assets/icons/contact_icon.png" alt="">
+                    <img class="contact_img" src="./assets/icons/contact_icon.png" alt="">
                     <a href="#Contacto">Contacto</a>
                 </li>
             </ul>
@@ -64,12 +69,12 @@
                 </article>
                 <article>
                     <a href="#" target="_blank">
-                        <img src="./assets/images/videojuego.webp" alt="Videojuego Online">
+                        <img src="./assets/images/webscrapping.webp" alt="Webscrapping">
                     </a>                    
                 </article>
                 <article>
                     <a href="#" target="_blank">
-                        <img src="./assets/images/webscrapping.webp" alt="Webscrapping">
+                        <img src="./assets/images/videojuego.webp" alt="Videojuego Online">
                     </a>                    
                 </article>
             </div>
