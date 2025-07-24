@@ -30,6 +30,7 @@ html{
 html, body{
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 /*---HEADER Y MENÚ DE NAVEGACIÓN---*/
@@ -84,7 +85,6 @@ header > nav > ul{
 /*Alinear iconos con texto*/
 .items{
     display: flex;
-    align-items: center;
 }
 
 /*Propiedades de los enlaces del menú*/
@@ -92,33 +92,33 @@ header > nav > ul{
     color: var(--primary-color);
     text-decoration: none;
     font-size: 24px;
-    margin: 5px;    
+    margin: 3px;    
 }
 
 .items:hover > a{
     color: var(--button_primary-color);
 }
 
-.items:hover > .home_img{
+.items:hover > a > .home_img{
     content: url('./assets/icons/home_icon_color.png');
 }
 
-.items:hover > .portafolio_img{
+.items:hover > a > .portafolio_img{
     content: url('./assets/icons/code_icon_color.png');
 }
 
-.items:hover > .about_me_img{
+.items:hover > a > .about_me_img{
     content: url('./assets/icons/about_me_icon_color.png');
 }
 
-.items:hover > .contact_img{
+.items:hover > a > .contact_img{
     content: url('./assets/icons/contact_icon_color.png');
 }
 
 
 header > nav > a > img{
     color: var(--primary-color);
-    font-size: 24;
+    font-size: 24px;
     text-decoration: none;
     display: none;    
 }
@@ -584,6 +584,7 @@ h1{
     }
 }
 
+/*Diseño responsive de la seccion 2*/
 @media (max-width: 700px){
     .seccion2 > div{
         max-height: 80%;
@@ -634,11 +635,241 @@ h1{
 /*---SECCIÓN 3---*/
 
 .seccion3 {
-    background-color: #9b59b6;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* background-color: #9b59b6; */
 }
 
-/*---SECCIÓN 4---*/
+.seccion3 > div{
+    width: 100%;
+    max-width: 990px;
+    height: 90%;
+    max-height: 90%;
+    /* background-color: crimson; */
+    gap: 0px;
+    margin: 2% auto 0px auto;
+    margin-top: 100px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-.seccion4 {
-    background-color: #e74c3c;
+.seccion3 > div > div:first-child{
+    width: 100%;
+    max-width: 990px;
+    height: 45%;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
+}
+
+/*¿Quién soy?*/
+.seccion3 > div > div:first-child > div:nth-child(1){
+    width: clamp(100px, 30vw, 100%);
+    height: clamp(80%, 30vw, 100%);
+    background-color: black;
+    border: 3px solid var(--button_primary-color);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    overflow: hidden;
+    gap: 5px;
+}
+
+.seccion3 > div > div:first-child > div:nth-child(1) > div{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+.seccion3 > div > div:first-child > div:nth-child(1) > div > img{
+    width: clamp(20px, 4vw, 40px);
+    height: clamp(20px, 4vw, 40px);
+}
+
+.seccion3 > div > div:first-child > div:nth-child(1) > div > h3{
+    font-size: clamp(5px,3vw,30px);
+    color: var(--button_primary-color);
+    white-space: nowrap;
+}
+
+.seccion3 > div > div:first-child > div:nth-child(1) > p{
+    font-size: clamp(11px, 1.8vw, 20px);
+    font-family: var(--font);
+    margin: 0px 20px 10px 20px;
+}
+
+/*Mi objetivo*/
+.seccion3 > div > div:first-child > div:nth-child(2){
+    width: clamp(100px, 30vw, 100%);
+    height: clamp(80%, 30vw, 100%);
+    background-color: black;
+    border: 3px solid var(--button_primary-color);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    overflow: hidden;
+    gap: 5px;
+}
+
+.seccion3 > div > div:first-child > div:nth-child(2) > div{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+.seccion3 > div > div:first-child > div:nth-child(2) > div > img{
+    width: clamp(20px, 4vw, 40px);
+    height: clamp(20px, 4w, 40px);
+}
+
+.seccion3 > div > div:first-child > div:nth-child(2) > div > h3{
+    font-size: clamp(5px,3vw,30px);
+    color: var(--button_primary-color);
+    white-space: nowrap;
+}
+
+.seccion3 > div > div:first-child > div:nth-child(2) > p{
+    font-size: clamp(11px, 1.8vw, 20px);
+    font-family: var(--font);
+    margin: 0px 20px 10px 20px;
+}
+
+/*Mi perfil*/
+.seccion3 > div > div:first-child > div:nth-child(3){
+    width: clamp(100px, 30vw, 100%);
+    height: clamp(80%, 30vw, 100%);
+    background-color: black;
+    border: 3px solid var(--button_primary-color);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    overflow: hidden;
+    gap: 5px;
+}
+
+.seccion3 > div > div:first-child > div:nth-child(3) > div{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+.seccion3 > div > div:first-child > div:nth-child(3) > div > img{
+    width: clamp(20px, 4vw, 40px);
+    height: clamp(20px, 4vw, 40px);
+}
+
+.seccion3 > div > div:first-child > div:nth-child(3) > div > h3{
+    font-size: clamp(5px,3vw,30px);
+    color: var(--button_primary-color);
+    white-space: nowrap;
+}
+
+.seccion3 > div > div:first-child > div:nth-child(3) > p{
+    font-size: clamp(11px, 1.8vw, 20px);
+    font-family: var(--font);
+    margin: 0px 20px 10px 20px;
+}
+
+/*Mis habilidades técnicas*/
+.seccion3 > div > div:last-child{
+    width: 100%;
+    max-width: 990px;
+    height: 45%;
+    background-color: black;
+    border: 3px solid var(--button_primary-color);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.seccion3 > div > div:last-child > h3{
+    font-size: clamp(25px,4vw,40px);
+    color: var(--button_primary-color);
+    white-space: nowrap;
+    margin-top: 10px;
+}
+
+.seccion3 > div > div:last-child > div:nth-child(2){
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 20px;
+    /* background-color: red; */
+}
+
+.seccion3 > div > div:last-child > div:nth-child(2) > img:nth-child(1){
+    width: clamp(100px, 20vw, 200px);
+    height: auto;
+}
+
+.seccion3 > div > div:last-child > div:nth-child(2) > img:nth-child(1)::after{
+    content: "HTML";
+    font-size: 14px;
+    color: red;
+}
+
+.seccion3 > div > div:last-child > div:nth-child(2) > img:nth-child(2){
+    width: clamp(100px, 20vw, 200px);
+    height: auto;
+}
+
+.seccion3 > div > div:last-child > div:nth-child(2) > img:nth-child(3){
+    width: clamp(100px, 20vw, 200px);
+    height: auto;
+}
+
+/*---FOOTER---*/
+
+footer{
+    height: 90%;
+    width: 100%;
+    /* background-color: black; */
+    color: white;
+    padding: 20px;
+    z-index: 10000;
+}
+
+footer > div{
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+}
+
+footer > div > h4{
+    font-size: 50px;
+    font-style:normal;
+    font-family: var(--font);
+    color: red;
 }
