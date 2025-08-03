@@ -1053,6 +1053,7 @@ h1{
 /*---FOOTER---*/
 
 footer{
+    position: relative;
     height: 90%;
     width: 100%;
     padding: 20px;
@@ -1074,7 +1075,7 @@ footer > div{
     overflow: hidden;
 }
 
-footer > div > div:first-child{
+footer > div > div:nth-child(1){
     width: 100%;
     height: 20%;
     display: flex;
@@ -1082,7 +1083,7 @@ footer > div > div:first-child{
     align-items: center;
 }
 
-footer > div > div:first-child > p{
+footer > div > div:nth-child(1) > p{
     font-size: clamp(5px,8vw,45px);
     font-family: var(--font);
     color: var(--primary-color);
@@ -1090,7 +1091,7 @@ footer > div > div:first-child > p{
 }
 
 
-footer > div > div:last-child{
+footer > div > div:nth-child(2){
     width: 100%;
     height: 80%;
     display: flex;
@@ -1100,7 +1101,7 @@ footer > div > div:last-child{
     gap: 50px;
 }
 
-footer > div > div:last-child > div:first-child{
+footer > div > div:nth-child(2) > div:nth-child(1){
     width: 50%;
     height: 100%;
     display: flex;
@@ -1110,14 +1111,14 @@ footer > div > div:last-child > div:first-child{
     overflow: hidden;
 }
 
-footer > div > div:last-child > div:first-child > p{
+footer > div > div:nth-child(2) > div:nth-child(1) > p{
     font-size: clamp(16px, 1.8vw, 20px);
     font-family: var(--font);
     color: var(--primary-color);
     padding: 20px;
 }
 
-footer > div > div:last-child > div:first-child > div{
+footer > div > div:nth-child(2) > div:nth-child(1) > div{
     width: 100%;
     height: 10%;
     display: flex;
@@ -1125,12 +1126,12 @@ footer > div > div:last-child > div:first-child > div{
     justify-content: space-evenly;
 }
 
-footer > div > div:last-child > div:first-child > div > a > img{
+footer > div > div:nth-child(2) > div:nth-child(1) > div > a > img{
     width: clamp(20px, 7vw, 90%);
     height: clamp(20px, 7vw, 90%);    
 }
 
-footer > div > div:last-child > div:last-child{
+footer > div > div:nth-child(2) > div:nth-child(2){
     width: 50%;
     height: 100%;
     display: flex;
@@ -1139,7 +1140,7 @@ footer > div > div:last-child > div:last-child{
     align-items: center;
 }
 
-footer > div > div:last-child > div:last-child > form{
+footer > div > div:nth-child(2) > div:nth-child(2) > form{
     width: 100%;
     height: 100%;
     background-color: var(--secondary-color);
@@ -1190,13 +1191,24 @@ footer > div > div:last-child > div:last-child > form{
     background-color: var(--button_primary-color);
 }
 
+footer > p{
+    position: absolute;
+    font-family: var(--font);
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 @media (max-width: 700px){
-    footer > div > div:first-child{
+    footer > div > div:nth-child(1){
         width: 100%;
         height: 10%;
     }
 
-    footer > div > div:last-child{
+    footer > div > div:nth-child(2){
         width: 100%;
         height: 90%;
         display: flex;
@@ -1206,23 +1218,23 @@ footer > div > div:last-child > div:last-child > form{
         gap: 0px;
     }
 
-    footer > div > div:last-child > div:first-child{
+    footer > div > div:nth-child(2) > div:nth-child(1){
         width: 100%;
         height: 40%;
         justify-content: flex-start;
     }
 
-    footer > div > div:last-child > div:first-child > p{
-        font-size: clamp(16px, 2.6vw, 30px);
-        padding: 10px;
+    footer > div > div:nth-child(2) > div:nth-child(1) > p{
+        font-size: clamp(14px, 1.8vw, 20px);
+        padding: 5px;
     }
 
-    footer > div > div:last-child > div:first-child > div > a > img{
+    footer > div > div:nth-child(2) > div:nth-child(1) > div > a > img{
         width: clamp(30px, 7vw, 90%);
         height: clamp(30px, 7vw, 90%);    
     }
 
-    footer > div > div:last-child > div:last-child{
+    footer > div > div:nth-child(2) > div:nth-child(2){
         width: 100%;
         height: 60%;
 
