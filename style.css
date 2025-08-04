@@ -1153,6 +1153,7 @@ footer > div > div:nth-child(1) > p{
     font-family: var(--font);
     color: var(--primary-color);
     padding: 20px;
+    white-space: nowrap;
 }
 
 
@@ -1267,6 +1268,7 @@ footer > p{
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
+    white-space: nowrap;
 }
 
 @media (max-width: 700px){
