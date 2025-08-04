@@ -242,7 +242,7 @@ h1{
     /*Si el navegador no es compatible con esta propiedad, el color por defecto será blanco*/
     background-clip: text;
     background-color: var(--primary-color);
-    animation: animar-degradado 3s ease-in-out infinite, entradaIzquierdaDerecha 1s ease forwards;
+    animation: animar-degradado 3s ease alternate infinite, entradaIzquierdaDerecha 1s ease forwards;
 }
 
 /*Animar de izquierda a derecha*/
